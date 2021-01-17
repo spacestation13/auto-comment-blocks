@@ -2,10 +2,6 @@
 
 Provides block comment completion for Javadoc-style multi-line comments and single-line comment blocks for most officially supported languages.
 
-## MAJOR CHANGES IN 1.0 UPDATE (Please Read)
-
-A lot has changed in this update. Please open issues for any bugs you encounter.
-
 ### Single-line Comment Blocks
 You can now use single line comment blocks for languages with `//`, `#`, or `;` style single line comments. Press `Shift+Enter` while on a commented line to insert a new commented line with the same level of indentation. See the Settings section for how to change the behavior so that `Enter` inserts a commented line while `Shift+Enter` breaks out of the comment block (this only works correctly for a subset of languages right now).
 
@@ -55,11 +51,3 @@ Reload the extension after changing any settings.
   + For every other language, if you press `Tab` immediately after breaking out of a comment block, it will insert a commented line, for some unknown reason.
 * Sometimes multi-line completion/aseterisk insertion doesn't work. The reason is still unknown. It may go away if you reload your workspace.
 * Currently, VS Code only allows extensions to overwrite, instead of modify, existing language configurations. This means that this extension may clash with another extension that overwrites the same language configurations, causing one or both not to work. In that case, uninstalling this extension is the only option for now.
-
-Please create an issue in the [repository](https://github.com/kevinkyang/auto-comment-blocks/issues) if you find any bugs, or have questions or feature requests.
-
-## Release Notes
-
-### 1.0.0
-- Add multi-line comment support for Less, Objective-C/C++, and Swift.
-- Add single-line comment blocks for most officially supported languages. See README for more information.

@@ -1,5 +1,3 @@
-'use strict';
-
 import { IndentAction, OnEnterRule } from 'vscode';
 
 export class Rules {
@@ -10,24 +8,29 @@ export class Rules {
       beforeText: /^\s*\/\*\*(?!\/)([^\*]|\*(?!\/))*$/,
       afterText: /^\s*\*\/$/,
       action: { indentAction: IndentAction.IndentOutdent, appendText: ' * ' }
-    }, {
+    },
+    {
       // e.g. /** ...|
       beforeText: /^\s*\/\*\*(?!\/)([^\*]|\*(?!\/))*$/,
       action: { indentAction: IndentAction.None, appendText: ' * ' }
-    }, {
+    },
+    {
       // e.g. /*! | */
       beforeText: /^\s*\/\*\!(?!\/)([^\*]|\*(?!\/))*$/,
       afterText: /^\s*\*\/$/,
       action: { indentAction: IndentAction.IndentOutdent, appendText: ' * ' }
-    }, {
+    },
+    {
       // e.g. /*! ...|
       beforeText: /^\s*\/\*\!(?!\/)([^\*]|\*(?!\/))*$/,
       action: { indentAction: IndentAction.None, appendText: ' * ' }
-    }, {
+    },
+    {
       // e.g.  * ...|
       beforeText: /^(\t|(\ ))*\ \*(\ ([^\*]|\*(?!\/))*)?$/,
       action: { indentAction: IndentAction.None, appendText: '* ' }
-    }, {
+    },
+    {
       // e.g.  */|
       beforeText: /^(\t|(\ ))*\ \*\/\s*$/,
       action: { indentAction: IndentAction.None, removeText: 1 }

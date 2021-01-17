@@ -1,7 +1,4 @@
-'use strict';
-
-import { Disposable, ExtensionContext, IndentAction, LanguageConfiguration, OnEnterRule, TextEditor, TextEditorEdit, commands, languages, workspace, } from 'vscode';
-
+import { commands, Disposable, ExtensionContext, LanguageConfiguration, languages, TextEditor, TextEditorEdit, workspace } from 'vscode';
 import { Rules } from './rules';
 
 let fs = require('fs');

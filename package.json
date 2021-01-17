@@ -1,9 +1,9 @@
 {
     "name": "auto-comment-blocks",
-    "displayName": "Auto Comment Blocks",
+    "displayName": "Auto Comment Blocks (DM support)",
     "description": "Provides block comment completion for Javadoc-style multi-line comments and single-line comment blocks for most officially supported languages.",
-    "version": "1.0.1",
-    "publisher": "kevinkyang",
+    "version": "1.1.1",
+    "publisher": "stylemistake",
     "homepage": "https://github.com/kevinkyang/auto-comment-blocks",
     "repository": {
         "type": "git",
@@ -81,6 +81,10 @@
                 "configuration": "./language-configuration/language-configuration.scss.json"
             },
             {
+                "id": "dm",
+                "configuration": "./language-configuration/language-configuration.dm.json"
+            },
+            {
                 "id": "groovy",
                 "configuration": "./language-configuration/language-configuration.groovy.json"
             },
@@ -128,10 +132,10 @@
         "test": "node ./node_modules/vscode/bin/test"
     },
     "devDependencies": {
-        "typescript": "^2.0.3",
+        "typescript": "^4.1.2",
         "vscode": "^1.0.0",
         "mocha": "^2.3.3",
-        "@types/node": "^6.0.40",
+        "@types/node": "^12.0.0",
         "@types/mocha": "^2.2.32"
     }
 }
