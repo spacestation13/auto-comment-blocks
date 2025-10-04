@@ -10,9 +10,6 @@ The Language Support section shows which languages are supported. See the Settin
 ### Multi-line Comment Blocks
 This feature has not changed.
 
-## Usage
-![Demo](https://raw.githubusercontent.com/kevinkyang/auto-comment-blocks/master/img/demo.gif)
-
 ### Javadoc-style comment blocks
 Type `/**` to start a block comment, then hit the Enter key, and the extension will close the block. While inside the comment block, the extension will insert an asterisk at the start of every new line, and align the comment, respecting indentation.
 
