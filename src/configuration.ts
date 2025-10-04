@@ -5,9 +5,9 @@ let fs = require('fs');
 
 export class Configuration {
   
-  private readonly extensionName: string = "auto-comment-blocks";
+  private readonly extensionName: string = "auto-comment-blocks-dm";
   private readonly singleLineBlockCommand: string = 
-      "auto-comment-blocks.singleLineBlock";
+      "auto-comment-blocks-dm.singleLineBlock";
   private readonly singleLineConfigFile: string = __dirname +
       "/../../language-configuration/single-line-configuration.json";
   private readonly multiLineConfigFile: string = __dirname +
@@ -15,8 +15,6 @@ export class Configuration {
 
   private readonly singleLineBlockOnEnter: string = "singleLineBlockOnEnter";
   private readonly slashStyleBlocks: string = "slashStyleBlocks";
-  private readonly hashStyleBlocks: string = "hashStyleBlocks";
-  private readonly semicolonStyleBlocks: string = "semicolonStyleBlocks";
   private readonly disabledLanguages: string = "disabledLanguages";
 
   private disabledLanguageList: string[] = 
@@ -92,22 +90,6 @@ export class Configuration {
         this.singleLineBlocksMap.set(langId, '//');
       }
     }
-
-    let customHashLangs = 
-        this.getConfiguration().get<string[]>(this.hashStyleBlocks);
-    for (let langId of customHashLangs) {
-      if (langId && langId.length > 0) {
-        this.singleLineBlocksMap.set(langId, '#');
-      }
-    }
-
-    let customSemicolonLangs =
-        this.getConfiguration().get<string[]>(this.semicolonStyleBlocks);
-    for (let langId of customSemicolonLangs) {
-      if (langId && langId.length > 0) {
-        this.singleLineBlocksMap.set(langId, ';');
-      }
-    }
   }
 
   configureCommentBlocks(context: ExtensionContext) {
@@ -145,12 +127,6 @@ export class Configuration {
         if (line.text.search(/^\s*\/\/\/\s*/) !== -1) {
           style = '///';
         }
-
-      } else if (style === '#' && line.text.search(/^\s*#\s*/) !== -1) {
-        indentRegex = /#/;
-
-      } else if (style === ';' && line.text.search(/^\s*;\s*/) !== -1) {
-        indentRegex = /;/;
 
       } else {
         isCommentLine = false;

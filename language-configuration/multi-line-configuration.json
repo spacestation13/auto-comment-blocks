@@ -1,19 +1,5 @@
 {
   "languages": [
-    "c",
-    "cpp",
-    "csharp",
-    "css",
-    "dm",
-    "go",
-    "groovy",
-    "java",
-    "less",
-    "objective-c",
-    "objective-cpp",
-    "php",
-    "rust",
-    "scss",
-    "swift"
+    "dm"
   ]
 }

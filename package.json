@@ -1,125 +1,70 @@
 {
-    "name": "auto-comment-blocks",
+    "name": "auto-comment-blocks-dm",
     "displayName": "Auto Comment Blocks (DM support)",
-    "description": "Provides block comment completion for Javadoc-style multi-line comments and single-line comment blocks for most officially supported languages.",
-    "version": "1.1.1",
-    "publisher": "stylemistake",
-    "homepage": "https://github.com/kevinkyang/auto-comment-blocks",
+    "description": "Provides block comment completion for Javadoc-style multi-line comments and single-line comment blocks for DM.",
+    "version": "2.0.0",
+    "publisher": "ss13",
+    "homepage": "https://github.com/spacestation13/auto-comment-blocks",
     "repository": {
         "type": "git",
-        "url": "https://github.com/kevinkyang/auto-comment-blocks.git"
+        "url": "https://github.com/spacestation13/auto-comment-blocks.git"
     },
-    "license": "SEE LICENSE IN LICENSE",
+    "license": "MIT",
     "icon": "img/icon.png",
     "galleryBanner": {
         "color": "#171A29",
         "theme": "dark"
     },
     "engines": {
-        "vscode": "^1.12.0"
+        "vscode": "^1.90.0"
     },
     "keywords": [
         "auto",
         "comment",
-        "block",
-        "asterisk"
+        "dm",
+        "byond"
     ],
     "categories": [
         "Other"
     ],
     "activationEvents": [
-        "*",
-        "onCommand:auto-comment-blocks.singleLineBlock"
+        "onCommand:auto-comment-blocks-dm.singleLineBlock"
     ],
     "main": "./out/src/extension",
     "contributes": {
         "configuration": {
             "title": "Auto Comment Blocks",
             "properties": {
-                "auto-comment-blocks.singleLineBlockOnEnter": {
+                "auto-comment-blocks-dm.singleLineBlockOnEnter": {
                     "type": "boolean",
                     "default": false,
                     "description": "If enabled, a new commented line is inserted when Enter is pressed, and comment blocks are broken by pressing Shift+Enter. If disabled (the default), a commented line is inserted when Shift+Enter is pressed, and comment blocks are broken by pressing Enter."
                 },
-                "auto-comment-blocks.disabledLanguages": {
+                "auto-comment-blocks-dm.disabledLanguages": {
                     "type": "array",
                     "default": [],
                     "description": "Add languageIds here to disable any comment completion for that language."
                 },
-                "auto-comment-blocks.slashStyleBlocks": {
+                "auto-comment-blocks-dm.slashStyleBlocks": {
                     "type": "array",
                     "default": [],
                     "description": "Add languageIds here to enable '//' and '///'-style single line comment blocks for that language. This allows unsupported languages to have comment completion."
-                },
-                "auto-comment-blocks.hashStyleBlocks": {
-                    "type": "array",
-                    "default": [],
-                    "description": "Add languageIds here to enable '#'-style single line comment blocks for that language. This allows unsupported languages to have comment completion."
-                },
-                "auto-comment-blocks.semicolonStyleBlocks": {
-                    "type": "array",
-                    "default": [],
-                    "description": "Add languageIds here to enable ';'-style single line comment blocks for that language. This allows unsupported languages to have comment completion."
                 }
             }
         },
         "languages": [
             {
-                "id": "c",
-                "configuration": "./language-configuration/language-configuration.c.json"
-            },
-            {
-                "id": "cpp",
-                "configuration": "./language-configuration/language-configuration.cpp.json"
-            },
-            {
-                "id": "css",
-                "configuration": "./language-configuration/language-configuration.css.json"
-            },
-            {
-                "id": "scss",
-                "configuration": "./language-configuration/language-configuration.scss.json"
-            },
-            {
                 "id": "dm",
-                "configuration": "./language-configuration/language-configuration.dm.json"
-            },
-            {
-                "id": "groovy",
-                "configuration": "./language-configuration/language-configuration.groovy.json"
-            },
-            {
-                "id": "php",
-                "configuration": "./language-configuration/language-configuration.php.json"
-            },
-            {
-                "id": "objective-c",
-                "configuration": "./language-configuration/language-configuration.objective-c.json"
-            },
-            {
-                "id": "objective-cpp",
-                "configuration": "./language-configuration/language-configuration.objective-c.json"
-            },
-            {
-                "id": "less",
-                "configuration": "./language-configuration/language-configuration.less.json"
-            },
-            {
-                "id": "swift",
-                "configuration": "./language-configuration/language-configuration.swift.json"
-            },
-            {
-                "id": "rust",
-                "configuration": "./language-configuration/language-configuration.rust.json"
-            },
-            {
-                "id": "go",
-                "configuration": "./language-configuration/language-configuration.go.json"
+                "configuration": "./language-configuration/language-configuration.dm.json",
+                "extensions": [
+                    ".dm",
+                    ".dme"
+                ]
             }
         ],
         "keybindings": [
             {
-                "command": "auto-comment-blocks.singleLineBlock",
+                "command": "auto-comment-blocks-dm.singleLineBlock",
                 "key": "shift+enter",
                 "when": "editorTextFocus"
             }
@@ -127,15 +72,13 @@
     },
     "scripts": {
         "vscode:prepublish": "tsc -p ./",
-        "compile": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
+        "compile": "tsc -watch -p ./"
     },
     "devDependencies": {
-        "typescript": "^4.1.2",
-        "vscode": "^1.0.0",
+        "@types/mocha": "^2.2.48",
+        "@types/node": "^20",
+        "@types/vscode": "^1.90.0",
         "mocha": "^2.3.3",
-        "@types/node": "^12.0.0",
-        "@types/mocha": "^2.2.32"
+        "typescript": "^5.9"
     }
 }

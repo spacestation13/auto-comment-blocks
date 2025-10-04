@@ -3,6 +3,10 @@ All notable changes to this extension will be documented in this file.
 
 <!--Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.-->
 
+## [2.0.0]
+- SS13 edition, only sets up .dm configuration - install the normal extension for other types.
+- DM support by @stylemistake
+
 ## [1.0.1]
 - Add multi-line support for Rust, Go
 - Add single-line support for YAML

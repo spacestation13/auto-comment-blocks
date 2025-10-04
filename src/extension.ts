@@ -1,4 +1,4 @@
-import { ExtensionContext } from 'vscode';
+import type { ExtensionContext } from 'vscode';
 import { Configuration } from './configuration';
 
 let fs = require('fs');
