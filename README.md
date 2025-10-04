@@ -2,6 +2,9 @@
 
 Provides block comment completion for Javadoc-style multi-line comments and single-line comment blocks for most officially supported languages.
 
+SS13 edition, only sets up DM configuration - install the normal extension for other types.
+DM support by @stylemistake
+
 ### Single-line Comment Blocks
 You can now use single line comment blocks for languages with `//` style single line comments. Press `Shift+Enter` while on a commented line to insert a new commented line with the same level of indentation. See the Settings section for how to change the behavior so that `Enter` inserts a commented line while `Shift+Enter` breaks out of the comment block (this only works correctly for a subset of languages right now).
 
